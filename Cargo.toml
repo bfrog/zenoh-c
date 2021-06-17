@@ -45,7 +45,7 @@ env_logger = "0.8.2"
 
 [lib]
 name = "zenohc"
-crate-type = ["cdylib"]
+crate-type = ["staticlib"]
 
 [package.metadata.deb.variants.libzenohc]
 name = "libzenohc"
@@ -65,3 +65,9 @@ assets = [
     ["include/zenoh.h", "usr/include/", "755"],
     ["include/zenoh/net.h", "usr/include/zenoh/", "755"],
 ]
+
+[profile.release]
+opt-level = 'z'
+lto = true
+codegen-units = 1
+panic = 'abort'
