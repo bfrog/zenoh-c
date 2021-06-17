@@ -20,7 +20,7 @@ else
   ifeq ($(shell uname -s),Darwin)
     LIB_NAME=libzenohc.dylib
   else
-    LIB_NAME=libzenohc.so
+    LIB_NAME=libzenohc.a
   endif
 endif
 
